@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from '../components/Header';
 
 function ProfileEdit() {
   return (
     <div data-testid="page-profile-edit">
-      <p>Eu sou ProfileEdit</p>
+      <Header />
     </div>
   );
 }
