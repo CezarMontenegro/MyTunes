@@ -1,8 +1,9 @@
 import React from 'react';
+import Container from '../styles/loading';
 
 function Loading() {
   return (
-    <h1>Carregando...</h1>
+    <Container>Carregando...</Container>
   );
 }
 

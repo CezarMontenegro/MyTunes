@@ -4,7 +4,7 @@ import Header from '../components/Header';
 function Profile() {
   return (
     <div data-testid="page-profile">
-      <Header />
+      <Header page="profile" />
       <p>Eu sou Profile</p>
     </div>
   );

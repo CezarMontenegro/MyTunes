@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import Container from '../styles/header';
 
-function Header() {
+function Header({ page }) {
   const [user, setUser] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -25,12 +26,38 @@ function Header() {
   }
 
   return (
-    <header data-testid="header-component">
-      <Link to="/search" data-testid="link-to-search">Search</Link>
-      <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-      <Link to="/profile" data-testid="link-to-profile">Profile</Link>
-      <span data-testid="header-user-name">{ user }</span>
-    </header>
+    <Container data-testid="header-component">
+      <div id="div-user">
+        <span>MyTunes</span>
+        <span data-testid="header-user-name" id="span-user">{ user }</span>
+      </div>
+      <div id="div-links">
+        <Link
+          to="/search"
+          data-testid="link-to-search"
+          // eslint-disable-next-line sonarjs/no-duplicate-string
+          className={ page === 'search' ? 'actual-link' : 'links' }
+        >
+          Search
+        </Link>
+
+        <Link
+          to="/favorites"
+          data-testid="link-to-favorites"
+          className={ page === 'favorites' ? 'actual-link' : 'links' }
+        >
+          Favorites
+        </Link>
+
+        <Link
+          to="/profile"
+          data-testid="link-to-profile"
+          className={ page === 'profile' ? 'actual-link' : 'links' }
+        >
+          Profile
+        </Link>
+      </div>
+    </Container>
   );
 }
 

@@ -13,6 +13,7 @@ code {
 }
 
 .loading {
+  color: rgb(11, 65, 33);
   align-items: center;
   display: flex;
   justify-content: center;
