@@ -7,6 +7,8 @@ const Container = styled.header`
     background-color: rgb(33, 40, 33);
     box-shadow: 2px 2px 2px 2px rgb(33, 40, 33);
     color: white;
+    font-weight: bolder;
+    font-size: xx-large;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +17,7 @@ const Container = styled.header`
       background-color: white;
       color: rgb(11, 65, 33);
       font-weight: 600;
+      font-size: large;
       width: 200px;
       height: 30px;
       border-radius: 20px;
