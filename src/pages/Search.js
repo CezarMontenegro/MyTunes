@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading';
-import { Container, SearchBox, AlbunsBox, LoadingBox } from '../styles/search';
+import { Container, SearchBox, AlbunsBox, LoadingBox, EmptyBox } from '../styles/search';
 
 function Search() {
   const [inputValue, setInputValue] = useState('');
   const [artist, setArtist] = useState('');
   const [artistAlbuns, setArtistAlbuns] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [firstSearch, setFirstSearch] = useState(false);
 
   function handleChange(event) {
     setInputValue(event.target.value);
@@ -17,6 +18,7 @@ function Search() {
 
   async function handleClick() {
     setLoading(true);
+    setFirstSearch(true);
     const result = await searchAlbumsAPI(inputValue);
     setArtist(inputValue);
     setInputValue('');
@@ -24,8 +26,46 @@ function Search() {
     setLoading(false);
   }
 
+  function conditionRender() {
+    if (loading) {
+      return (
+        <LoadingBox>
+          <Loading />
+        </LoadingBox>
+      );
+    }
+    if (firstSearch && !artistAlbuns.length) {
+      return <EmptyBox>Nenhum álbum foi encontrado</EmptyBox>;
+    }
+    if (firstSearch && artistAlbuns.length) {
+      return (
+        <AlbunsBox>
+          <h3>{`Resultado de álbuns de: ${artist}`}</h3>
+          <div id="div-albuns">
+            { artistAlbuns.map((album) => (
+              <Link
+                to={ `/album/${album.collectionId}` }
+                key={ album.collectionId }
+                data-testid={ `link-to-album-${album.collectionId}` }
+              >
+                <div id="div-cards">
+                  <img
+                    src={ album.artworkUrl100 }
+                    alt={ album.collectionName }
+                  />
+                  <h4>{album.collectionName}</h4>
+                  <h5>{album.artistName}</h5>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </AlbunsBox>
+      );
+    }
+  }
+
   return (
-    <div data-testid="page-search">
+    <body data-testid="page-search">
       <Header page="search" />
       <Container>
         <SearchBox id="search-div">
@@ -46,48 +86,10 @@ function Search() {
             Pesquisar
           </button>
         </SearchBox>
-        {
-          loading
-            ? (
-              <LoadingBox>
-                <Loading />
-              </LoadingBox>
-            )
-            : (
-              <AlbunsBox>
-                
-              </AlbunsBox>
-            )
-        }
+        { conditionRender() }
       </Container>
-    </div>
+    </body>
   );
 }
 
 export default Search;
-
-<div>
-                  {artist && <h1>{`Resultado de álbuns de: ${artist}`}</h1>}
-                </div>
-                <div>
-                  {
-                    artistAlbuns.length === 0
-                      ? <h1>Nenhum álbum foi encontrado</h1>
-                      : (artistAlbuns.map((album) => (
-                        <Link
-                          to={ `/album/${album.collectionId}` }
-                          key={ album.collectionId }
-                          data-testid={ `link-to-album-${album.collectionId}` }
-                        >
-                          <div>
-                            <img
-                              src={ album.artworkUrl100 }
-                              alt={ album.collectionName }
-                            />
-                            <h5>{album.collectionName}</h5>
-                            <h6>{album.artistName}</h6>
-                          </div>
-                        </Link>
-                      )))
-                  }
-                </div>

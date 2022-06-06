@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.body`
   height: 100vh;
   width: 100vw;
   background-color: #f9f9f9;
@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 `;
 
-export const LoginBox = styled.div`
+export const LoginBox = styled.main`
   height: 20vh;
   width: 50vw;
   background-color: white;
@@ -42,7 +42,7 @@ export const LoginBox = styled.div`
   }
 `;
 
-export const LoadingBox = styled.div`
+export const LoadingBox = styled.main`
   position: absolute;
   top: 50%;
   display: flex;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
-import Container from '../styles/header';
+import HeaderBox from '../styles/header';
 
 function Header({ page }) {
   const [user, setUser] = useState('');
@@ -26,12 +26,12 @@ function Header({ page }) {
   }
 
   return (
-    <Container data-testid="header-component">
-      <div id="div-user">
+    <HeaderBox data-testid="header-component">
+      <header id="header-user">
         <span>MyTunes</span>
         <span data-testid="header-user-name" id="span-user">{ user }</span>
-      </div>
-      <div id="div-links">
+      </header>
+      <nav id="nav-links">
         <Link
           to="/search"
           data-testid="link-to-search"
@@ -56,8 +56,8 @@ function Header({ page }) {
         >
           Profile
         </Link>
-      </div>
-    </Container>
+      </nav>
+    </HeaderBox>
   );
 }
 

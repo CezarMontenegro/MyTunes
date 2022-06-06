@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  border: 1px solid red;
+export const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,22 +29,55 @@ export const SearchBox = styled.div`
   }
 `;
 
-export const AlbunsBox = styled.div`
-  border: 1px solid red;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  h1 {
-    align-self: center;
-  }
-`;
-
 export const LoadingBox = styled.div`
   position: relative;
   top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const EmptyBox = styled.h1`
+  position: relative;
+  top: 100px;
+  color: rgb(38, 77, 38);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AlbunsBox = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    color: rgb(38, 77, 38);
+  }
+
+  #div-albuns {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+
+  #div-cards {
+    width: 100%;
+    border: 2px solid silver;
+    overflow-y: hidden;
+    color: rgb(38, 77, 38);
+    text-decoration: none;
+
+    img {
+      width: 230px;
+      height: 230px;
+    }
+
+    h4, h5 {
+      padding: 5%;
+    }
+  }
 `;

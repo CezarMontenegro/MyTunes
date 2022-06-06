@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const Container = styled.header`
-  #div-user {
+const HeaderBox = styled.header`
+  #header-user {
     padding: 0 50px;
     height: 60px;
     background-color: rgb(33, 40, 33);
@@ -27,7 +27,7 @@ const Container = styled.header`
     }
   }
 
-  #div-links {
+  #nav-links {
     height: 60px;
     display: flex;
     justify-content: space-around;
@@ -61,4 +61,4 @@ const Container = styled.header`
 
 `;
 
-export default Container;
+export default HeaderBox;
