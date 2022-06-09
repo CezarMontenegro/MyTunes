@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import MusicCard from '../components/MusicCard';
-import Main from '../styles/favorites';
+import { Main, LoadingBox } from '../styles/favorites';
+import Loading from '../components/Loading';
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -17,7 +18,7 @@ function Favorites() {
     fetchFavorites();
   }, [favorites]);
 
-  async function handleCheckbox(song, event) {
+  async function handleCheckbox(song) {
     setLoading(true);
     await removeSong({
       artistId: song.artistId,
@@ -54,26 +55,45 @@ function Favorites() {
     setLoading(false);
   }
 
+  function renderCondition() {
+    if (loading) {
+      return (
+        <LoadingBox>
+          <Loading />
+        </LoadingBox>
+      );
+    }
+    if (favorites.length && !loading) {
+      return (
+        <Main>
+          <div id="main-div">
+            <h3>Músicas Favoritas:</h3>
+            <div>
+              {favorites.map((song) => (
+                <div key={ song.trackId } className="song-div">
+                  <img src={ song.artworkUrl100 } alt={ song.artistName } />
+                  <MusicCard
+                    song={ song }
+                    favorites={ favorites }
+                    handleCheckbox={ () => handleCheckbox(song) }
+                  />
+                </div>))}
+            </div>
+          </div>
+        </Main>);
+    }
+    if (!favorites.length && !loading) {
+      return (
+        <Main>
+          <h1>You do not have favorites songs yet</h1>
+        </Main>);
+    }
+  }
+
   return (
     <body data-testid="page-favorites">
       <Header page="favorites" />
-      <Main>
-        <div id="main-div">
-          <h3>Músicas Favoritas:</h3>
-          <div>
-            {favorites.slice(1).map((song) => (
-              <div key={ song.trackId } className="song-div">
-                <img src={ song.artworkUrl100 } alt={ song.artistName } />
-                <MusicCard
-                  song={ song }
-                  favorites={ favorites }
-                  handleCheckbox={ (event) => handleCheckbox(song, event) }
-                />
-
-              </div>))}
-          </div>
-        </div>
-      </Main>
+      { renderCondition() }
     </body>
   );
 }

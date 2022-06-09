@@ -13,6 +13,18 @@ const HeaderBox = styled.header`
     justify-content: space-between;
     align-items: center;
 
+  #link {
+    text-decoration: none;
+    color: silver;
+    
+    p {
+      color: silver;
+      display: inline;
+      color: rgb(38, 77, 38);
+      
+    }
+  }
+
     #span-user {
       background-color: white;
       color: rgb(11, 65, 33);

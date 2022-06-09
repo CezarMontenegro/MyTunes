@@ -28,7 +28,11 @@ function Header({ page }) {
   return (
     <HeaderBox data-testid="header-component">
       <header id="header-user">
-        <span>MyTunes</span>
+        <Link to="/search" id="link">
+          My
+          <p>T</p>
+          unes
+        </Link>
         <span data-testid="header-user-name" id="span-user">{ user }</span>
       </header>
       <nav id="nav-links">
