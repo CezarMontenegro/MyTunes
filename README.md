@@ -13,6 +13,10 @@ O MyTunes é uma aplicação capaz de reproduzir músicas das mais variadas band
   - Ver a lista de músicas favoritas;
   - Ver o perfil da pessoa logada;
   - Editar o perfil da pessoa logada;
+  
+## Link da aplicação
+
+  https://cezarmontenegro.github.io/MyTunes
 
 ## Habilidades desenvolvidas no projeto
 
