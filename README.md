@@ -50,11 +50,11 @@ O MyTunes é uma aplicação capaz de reproduzir músicas das mais variadas band
 
 `npm start`
 
-## Autor
+## Entre em contato
 
 [![Linkedin Badge](https://img.shields.io/badge/-cezarmontenegro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/cezarmontenegro/)](https://www.linkedin.com/in/cezarmontenegro/) 
 [![Gmail Badge](https://img.shields.io/badge/-cezarguimaraes@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:cezarguimaraes@gmail.com)](mailto:cezarguimaraes@gmail.com)
-[![Instagram Badge](https://img.shields.io/badge/-@cezarguima-1ca0f1?style=flat-square&labelColor=E4405Flogo=instagram&logoColor=white&link=https://instagram.com/cezarguima)](https://instagram.com/cezarguima) 
+[![Instagram Badge](https://img.shields.io/badge/-@cezarguima-e4405f?style=flat-square&labelColor=e4405f&logo=instagram&logoColor=white&link=https://instagram.com/cezarguima)](https://instagram.com/cezarguima)
 
 
 
