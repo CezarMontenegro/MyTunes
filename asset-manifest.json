@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/MyTunes/public/index.html/static/css/main.37c792f6.chunk.css",
+    "main.js": "/MyTunes/public/index.html/static/js/main.f83c939e.chunk.js",
+    "main.js.map": "/MyTunes/public/index.html/static/js/main.f83c939e.chunk.js.map",
+    "runtime-main.js": "/MyTunes/public/index.html/static/js/runtime-main.a1422d18.js",
+    "runtime-main.js.map": "/MyTunes/public/index.html/static/js/runtime-main.a1422d18.js.map",
+    "static/js/2.440974ae.chunk.js": "/MyTunes/public/index.html/static/js/2.440974ae.chunk.js",
+    "static/js/2.440974ae.chunk.js.map": "/MyTunes/public/index.html/static/js/2.440974ae.chunk.js.map",
+    "index.html": "/MyTunes/public/index.html/index.html",
+    "static/css/main.37c792f6.chunk.css.map": "/MyTunes/public/index.html/static/css/main.37c792f6.chunk.css.map",
+    "static/js/2.440974ae.chunk.js.LICENSE.txt": "/MyTunes/public/index.html/static/js/2.440974ae.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1422d18.js",
+    "static/js/2.440974ae.chunk.js",
+    "static/css/main.37c792f6.chunk.css",
+    "static/js/main.f83c939e.chunk.js"
+  ]
+}
