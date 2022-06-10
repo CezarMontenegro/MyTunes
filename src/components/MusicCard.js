@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SongBox from '../styles/musicCard';
 
 function MusicCard(props) {
@@ -28,5 +29,11 @@ function MusicCard(props) {
     </SongBox>
   );
 }
+
+MusicCard.propTypes = {
+  song: PropTypes.arrayOf.isRequired,
+  handleCheckbox: PropTypes.func.isRequired,
+  favorites: PropTypes.arrayOf.isRequired,
+};
 
 export default MusicCard;

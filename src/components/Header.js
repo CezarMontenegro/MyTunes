@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
@@ -64,5 +65,9 @@ function Header({ page }) {
     </HeaderBox>
   );
 }
+
+Header.propTypes = {
+  page: PropTypes.string.isRequired,
+};
 
 export default Header;
