@@ -44,7 +44,7 @@ O MyTunes é uma aplicação capaz de reproduzir músicas das mais variadas band
 
 ## Comandos para rodar o projeto na sua máquina
 
-Para instalar as dependencias na sua máquina: `npm install`
+Para instalar as dependências na sua máquina: `npm install`
 
 Para iniciar a aplicação: `npm start`
 
