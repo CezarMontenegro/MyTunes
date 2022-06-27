@@ -28,6 +28,7 @@ O MyTunes é uma aplicação capaz de reproduzir músicas das mais variadas band
   * Utilizar o `Switch` do `React Router`
   * Usar o componente `Redirect` pra redirecionar para uma rota específica;
   * Criar links de navegação na aplicação com o componente `Link`;
+  * Criar telas de Loading durante carregamento da API e renderização condicional;
   * Criar componentes estilizados com o styled-components;
  
  ## Tecnologias utilizadas
