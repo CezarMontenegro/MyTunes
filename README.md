@@ -41,6 +41,7 @@ O MyTunes é uma aplicação capaz de reproduzir músicas das mais variadas band
 ## Bibliotecas utilizadas
 
 * React-router-dom
+* PropTypes
 * Styled-components
 
 ## Comandos para rodar o projeto na sua máquina
